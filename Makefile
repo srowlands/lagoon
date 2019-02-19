@@ -187,7 +187,8 @@ build/athenapdf-service: images/athenapdf-service/Dockerfile
 
 pythonimages :=  python__2.7.15 \
 								 python__3.7.2 \
-								 python__2.7.15-ckan
+								 python__2.7.15-ckan \
+								 python__2.7.15-ckandatapusher
 
 build-pythonimages = $(foreach image,$(pythonimages),build/$(image))
 
@@ -208,6 +209,7 @@ s3-images += python
 
 build/python__2.7.15 build/python__3.7.2: images/commons
 build/python__2.7.15-ckan: build/python__2.7.15
+build/python__2.7.15-ckandatapusher: build/python__2.7.15
 
 
 #######
